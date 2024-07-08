@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Bhupendra Singh Chaudhary
+Copyright (c) 2024 Sahil Samir Chalkhure
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
