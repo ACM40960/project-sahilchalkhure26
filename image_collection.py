@@ -116,17 +116,20 @@ def capture_gestures(label, num_samples=100, num_frames=30):
                             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
             keypoints = extract_keypoints(results)
 
-            try:
-                os.makedirs(os.path.join(DATA_PATH, label, str(sample)), exist_ok=True)
-                frame_path = os.path.join(DATA_PATH, label, str(sample), str(frame_num))
-                np.save(frame_path, keypoints)
-            except Exception as e:
-                print(f"Error saving keypoints: {e}")
+            # try:
+            #     os.makedirs(os.path.join(DATA_PATH, label, str(sample)), exist_ok=True)
+            #     frame_path = os.path.join(DATA_PATH, label, str(sample), str(frame_num))
+            #     np.save(frame_path, keypoints)
+            # except Exception as e:
+            #     print(f"Error saving keypoints: {e}")
 
             cv2.imshow('MediaPipe Detection', image)
 
             if cv2.waitKey(10) & 0xFF == ord('q'):
-                break
+                cap.release()
+                cv2.destroyAllWindows()
+                
+                return
 
     cap.release()
     cv2.destroyAllWindows()
