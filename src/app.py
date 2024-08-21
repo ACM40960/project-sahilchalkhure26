@@ -23,7 +23,7 @@ hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3)
 # Initialise pygame mixer for playing sounds
 pygame.mixer.init()
 
-MAX_SENTENCE_LENGTH = 5  # Maximum allowed length of the sentence
+MAX_SENTENCE_LENGTH = 30  # Maximum allowed length of the sentence
 
 
 def play_sound_for_prediction(prediction: str) -> None:
@@ -57,8 +57,8 @@ def run_sign_language_interpreter() -> None:
         cap = cv2.VideoCapture(0)
 
         # Set the width and height
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 
         window_name = "Sign Language Interpreter"
         cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
