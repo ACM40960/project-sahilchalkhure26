@@ -45,7 +45,7 @@ def play_sound_for_prediction(prediction: str) -> None:
 def run_sign_language_interpreter() -> None:
     """
     Run the sign language interpreter using the webcam and the trained model.
-q
+
     ":return: None
     """
     try:

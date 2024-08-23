@@ -82,8 +82,7 @@ def capture_images_new(labels: dict[int, str], num_samples: int = 200) -> bool:
 
                 # Display instructions on the frame
                 if current_hand == "Right Hand":
-                    instruction_text = f"Press SPACE to start capturing for '{
-                        label}' for RIGHT hand or 'q' to quit."
+                    instruction_text = f"Press SPACE to start capturing for '{label}' for RIGHT hand or 'q' to quit."
                 else:
                     instruction_text = "Switch to your LEFT hand and press SPACE to continue..."
                 cv2.putText(frame, instruction_text, (20, frame.shape[0] - 20),
@@ -109,8 +108,7 @@ def capture_images_new(labels: dict[int, str], num_samples: int = 200) -> bool:
                     if not os.path.exists(label_dir):
                         os.makedirs(label_dir, exist_ok=True)
 
-                    logging.info(f"Starting capture for label '{label}'. Need {
-                                 remaining_images} more images.")
+                    logging.info(f"Starting capture for label '{label}'. Need {remaining_images} more images.")
 
                     # Countdown before capturing starts
                     start_time = time.time()
@@ -149,8 +147,7 @@ def capture_images_new(labels: dict[int, str], num_samples: int = 200) -> bool:
                             label_dir, f"{num_samples - remaining_images + 1}.jpg")
                         cv2.imwrite(img_path, frame)
                         cv2.imshow("Frame", frame)
-                        logging.info(f"Captured image {img_count} for label '{
-                                     label}' ({current_hand})")
+                        logging.info(f"Captured image {img_count} for label '{label}' ({current_hand})")
                         images_to_capture -= 1
                         remaining_images -= 1  # Decrease the remaining image count
                         # Small delay between captures to avoid duplicates
@@ -158,8 +155,7 @@ def capture_images_new(labels: dict[int, str], num_samples: int = 200) -> bool:
                     if current_hand == "Right Hand" and remaining_images > 0:
                         current_hand = "Left Hand"
                         allow_skip_or_quit = False  # Disallow skipping or quitting after right hand capture
-            logging.info(f"Finished capturing {
-                         num_samples} images for label '{label}'.")
+            logging.info(f"Finished capturing {num_samples} images for label '{label}'.")
         cap.release()
         cv2.destroyAllWindows()
         return True
