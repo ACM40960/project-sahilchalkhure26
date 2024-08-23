@@ -45,7 +45,7 @@ def play_sound_for_prediction(prediction: str) -> None:
 def run_sign_language_interpreter() -> None:
     """
     Run the sign language interpreter using the webcam and the trained model.
-
+q
     ":return: None
     """
     try:
@@ -57,8 +57,8 @@ def run_sign_language_interpreter() -> None:
         cap = cv2.VideoCapture(0)
 
         # Set the width and height
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 2304)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1536)
 
         window_name = "Sign Language Interpreter"
         cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
